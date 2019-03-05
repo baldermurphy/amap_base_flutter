@@ -359,6 +359,25 @@ object AddPolyline : MapMethodHandler {
     }
 }
 
+object AddCircle : MapMethodHandler {
+    lateinit var map: AMap
+
+    override fun with(map: AMap): MapMethodHandler {
+        this.map = map
+        return this
+    }
+
+    override fun onMethodCall(call: MethodCall, result: MethodChannel.Result) {
+        val options = call.argument<String>("options")?.parseFieldJson<UnifiedCircleOptions>()
+
+        log("map#AddCircle android端参数: options -> $options")
+
+        options?.applyTo(map)
+
+        result.success(success)
+    }
+}
+
 object ClearMarker : MapMethodHandler {
 
     lateinit var map: AMap

@@ -4,6 +4,7 @@ import 'dart:typed_data';
 
 import 'package:amap_base/amap_base.dart';
 import 'package:amap_base/src/common/log.dart';
+import 'package:amap_base/src/map/model/circle_options.dart';
 import 'package:amap_base/src/map/model/marker_options.dart';
 import 'package:amap_base/src/map/model/my_location_style.dart';
 import 'package:amap_base/src/map/model/polyline_options.dart';
